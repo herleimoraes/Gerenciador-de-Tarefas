@@ -1,0 +1,27 @@
+{
+  "entities": {
+    "Task": {
+      "title": "Task",
+      "description": "A task with a due date, priority, status and optional completion photo.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "dueDate": { "type": "number" },
+        "priority": { "type": "string", "enum": ["Low", "Medium", "High"] },
+        "status": { "type": "string", "enum": ["Pending", "In Progress", "Completed"] },
+        "completionPhotoUrl": { "type": "string" },
+        "createdAt": { "type": "timestamp" },
+        "updatedAt": { "type": "timestamp" }
+      },
+      "required": ["userId", "title", "description", "dueDate", "priority", "status", "completionPhotoUrl", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/tasks/{taskId}": {
+      "schema": { "$ref": "#/entities/Task" },
+      "description": "Global tasks collection, scoped to owners via rules."
+    }
+  }
+}

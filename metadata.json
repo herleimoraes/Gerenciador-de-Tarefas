@@ -1,0 +1,8 @@
+{
+  "name": "TaskFlow Vibrant",
+  "description": "A vibrant mobile-first task management app with due dates, priorities, status tracking, and photo documentation upon completion.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}
